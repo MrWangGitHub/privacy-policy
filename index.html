@@ -52,8 +52,8 @@
 
   <script>
     function closeInCreator(){
-       // 不用自定义 scheme，用 hash 触发 url 变化
-      location.hash = "closeWebView";
+       // 触发一次真实导航（会触发 WebView LOADING）
+    location.href = location.pathname + "?action=close";
     }
   </script>
 </head>
