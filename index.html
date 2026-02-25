@@ -52,8 +52,7 @@
 
   <script>
     function closeInCreator(){
-       // 触发一次真实导航（会触发 WebView LOADING）
-    location.href = location.pathname + "?action=close";
+       window.parent.postMessage("closeWebView","*");
     }
   </script>
 </head>
