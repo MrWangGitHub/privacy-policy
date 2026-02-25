@@ -52,8 +52,8 @@
 
   <script>
     function closeInCreator(){
-      // 触发 Creator 拦截
-      window.location.href = "cocos://closeWebView";
+       // 不用自定义 scheme，用 hash 触发 url 变化
+      location.hash = "closeWebView";
     }
   </script>
 </head>
