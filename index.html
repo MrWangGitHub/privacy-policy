@@ -1,82 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Privacy Policy</title>
 
   <style>
-    html, body{
-      background:#fff;
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --sub:#5c5c5c;
+      --line:rgba(0,0,0,.10);
+      --card:#f7f7f7;
+      --link:#007aff;
+    }
+
+    html,body{
+      background:var(--bg);
       margin:0;
       padding:0;
-      font-family:Arial;
-      line-height:1.6;
+      color:var(--text);
+      font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+                   Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      -webkit-text-size-adjust:100%;
+      line-height:1.65;
     }
-    .container{
-      max-width:800px;
-      margin:0 auto;
-      padding:20px;
-    }
-    .topbar{
+
+    /* 顶部标题栏：像系统设置页 */
+    .nav{
       position:sticky;
       top:0;
-      background:#fff;
-      padding:12px 0;
-      border-bottom:1px solid rgba(0,0,0,.08);
       z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:saturate(180%) blur(14px);
+      -webkit-backdrop-filter:saturate(180%) blur(14px);
+      border-bottom:1px solid var(--line);
+      padding:calc(env(safe-area-inset-top) + 10px) 16px 10px;
     }
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:10px;
-      border:1px solid rgba(0,0,0,.12);
-      background:#f6f6f6;
-      color:#111;
-      text-decoration:none;
-      font-size:14px;
-      cursor:pointer;
-      user-select:none;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .back-btn:active{
-      transform:scale(0.98);
-      background:#ededed;
-    }
-    .arrow{
+    .nav h1{
+      margin:0;
       font-size:18px;
-      line-height:1;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+    .nav .hint{
+      margin-top:4px;
+      font-size:12px;
+      color:var(--sub);
+    }
+
+    /* 内容区域：移动端舒适宽度 */
+    .wrap{
+      max-width:760px;
+      margin:0 auto;
+      padding:16px;
+      padding-bottom:calc(env(safe-area-inset-bottom) + 24px);
+    }
+
+    /* 卡片式块：更像 iOS 信息页面 */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:16px;
+      margin:14px 0;
+    }
+
+    h2{
+      font-size:16px;
+      margin:0 0 8px 0;
+      font-weight:700;
+    }
+
+    p{
+      margin:10px 0;
+      font-size:15px;
+    }
+
+    ul{
+      margin:10px 0 0 18px;
+      padding:0;
+      font-size:15px;
+    }
+    li{ margin:6px 0; }
+
+    a{
+      color:var(--link);
+      text-decoration:none;
+      word-break:break-word;
+    }
+    a:hover{ text-decoration:underline; }
+
+    .meta{
+      font-size:12px;
+      color:var(--sub);
+      margin-top:18px;
     }
   </style>
-
-  <script>
-    function closeInCreator(){
-       window.parent.postMessage("closeWebView","*");
-    }
-  </script>
 </head>
 
 <body>
-  <div class="container">
+  <header class="nav">
+    <h1>Privacy Policy</h1>
+    <div class="hint">Last updated: 2026-02-25</div>
+  </header>
 
-    <div class="topbar">
-      <a class="back-btn" onclick="closeInCreator()">
-        <span class="arrow">←</span>
-        <span>Back</span>
-      </a>
+  <main class="wrap">
+    <div class="card">
+      <h2>Overview</h2>
+      <p>
+        This app does not collect, store, or share any personal data.
+      </p>
     </div>
 
-    <h1>Privacy Policy</h1>
+    <div class="card">
+      <h2>Data We Do Not Collect</h2>
+      <p>We do not require users to create an account and we do not access:</p>
+      <ul>
+        <li>Contacts</li>
+        <li>Location</li>
+        <li>Photos</li>
+        <li>Microphone</li>
+        <li>Camera</li>
+        <li>Any other personal information</li>
+      </ul>
+    </div>
 
-    <p>This app does not collect, store, or share any personal data.</p>
+    <div class="card">
+      <h2>Contact</h2>
+      <p>If you have any questions, please contact us at:</p>
+      <p><strong><a href="mailto:annahello901@163.com">annahello901@163.com</a></strong></p>
+    </div>
 
-    <p>We do not require users to create an account and we do not access contacts,
-      location, photos, microphone, camera, or any other personal information.</p>
-
-    <p>If you have any questions, please contact us at:</p>
-    <p><strong>annahello901@163.com</strong></p>
-
-  </div>
+    <div class="meta">
+      If this policy changes, we will update this page.
+    </div>
+  </main>
 </body>
 </html>
